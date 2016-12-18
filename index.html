@@ -1,9 +1,229 @@
+
+
 <!DOCTYPE html>
 <html>
+<head>
+<link rel="stylesheet" href="lib/w3.css">
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: #777;
+}
+
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  position: relative;
+  opacity: 0.65;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+
+.bgimg-1 {
+  background-image: url("images/bg1.jpg");
+  min-height: 100%;
+}
+
+/* Remove margins and padding from the list, and add a black background color */
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+/* Float the list items side by side */
+ul.topnav li {float: left;}
+
+/* Style the links inside the list items */
+ul.topnav li a {
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of links on hover */
+ul.topnav li a:hover {background-color: #555;}
+
+/* Hide the list item that contains the link that should open and close the topnav on small screens */
+ul.topnav li.icon {display: none;}
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+
+
+h3 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 30px "Lato", sans-serif;
+  color: #111;
+}
+
+h4 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 30px "Lato", sans-serif;
+  color: #777;
+}
+
+hours {
+
+
+}
+
+#map {
+        width: 100%;
+        height: 400px;
+}
+
+.logo {
+    opacity: 0.9;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+	text-align:center;
+	
+}
+
+</style>
+</head>
 <body>
 
-<h1>Welcome to Heit Engineering</h1>
+<nav>
+	<ul class="topnav" id="myTopnav">
+	  <li><a href="#Hours">Hours</a></li>
+	  <li><a href="#Location">Location</a></li>
+	  <li><a href="#Contact">Contact</a></li>
+	  <li class="icon">
+		<a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+	  </li>
+	</ul>
+	
+</nav>
 
+<!--<div style="color: #777;background-color:grey;text-align:center;">-->
+	
+<!--</div>-->
+
+<div class="bgimg-1">
+  <br><div class="logo"><img src="images/Logo.png"/></div>
+  <div class="caption">
+	<center><br><br><br><br><br><br><br><br>
+    <span class="border">Heit Engineering Services</span><br>
+	<span class="border">Coming Soon</span>
+  </div></center>
+</div>
+
+
+
+<!--Hours-->
+<div style="position:relative;">
+  <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: left;">
+  <a name="Hours"></a>
+  <h4 style="text-align:center;">HOURS</h4>
+  <div style="text-align:center;";>
+    Monday&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9AM - 6PM<br>
+	Tuesday&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9AM - 6PM<br>
+	Wednesday&nbsp;9AM - 6PM<br>
+	Thursday&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9AM - 6PM<br>
+	Friday&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9AM - 6PM<br>
+	<div style="color: #777;">Saturday&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Closed<br>
+	Sunday&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Closed</div>
+   </div>
+</div>
+<!--Maps-->  
+</div>
+<div class="bgimg-3"></div>
+<div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
+  <a name="Location"></a>
+  <h3 style="text-align:center;">Location</h3>
+  <center>Engineering Shop</center>
+  <center>Somewhere</center>
+  <center>Utah</center>
+  <div id="map"></div>
+  
+    <script>
+      function initMap() {
+        var mapDiv = document.getElementById('map');
+		var myLatLng = {lat: 40.38, lng: -111.8910};
+        var map = new google.maps.Map(mapDiv, {
+            center: myLatLng,
+            zoom: 8
+        });
+		var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Engineering Shop'
+        });
+      }
+    </script>
+	
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBumb3XTqKei0Eu_hUYY-WbMN0lkdTkU2Q&callback=initMap">
+    </script>
+</div>
+<div class="bgimg-2"></div>
+<div style="position:relative;">
+  <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+  <a name="Contact"></a>
+  <h4 style="text-align:center;">Contact</h3>
+  <center>Phone Number<br>Call or Text for Appointment<br><a href="mailto:info@thepowersportshop.com" target="_top">info@email.com</a></center>
+  </div>
+</div>
+<div class="bgimg-3"></div>
+
+
+<!--div class="bgimg-2">
+  <div class="caption">
+    <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">HOURS</span>
+
+  </div>
+</div>
+
+
+
+<div class="bgimg-3">
+  <div class="caption">
+    <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">SCROLL UP</span>
+  </div>
+</div>
+
+<div style="position:relative;">
+  <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+    <p>Scroll up and down to really get the feeling of how Parallax Scrolling works.</p>
+		  <h3 style="text-align:center;">Contact</h3>
+      <center>801-821-8369</center>
+	  <center>Call or Text for Appointment</center>
+	  <center>info@thepowersportshop.com</center>
+  </div>
+</div>
+
+<div class="bgimg-1">
+  <div class="caption">
+    <span class="border">COOL!</span>
+  </div>
+</div-->
 
 </body>
 </html>
